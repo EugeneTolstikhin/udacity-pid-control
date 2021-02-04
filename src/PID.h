@@ -19,7 +19,9 @@ class PID {
    */
   void Init(double Kp_, double Ki_, double Kd_);
 
-  /**
+  double twiddle(double tolerance, double cte);
+
+   /**
    * Update the PID error variables given cross track error.
    * @param cte The current cross track error
    */
@@ -32,6 +34,8 @@ class PID {
   double TotalError();
 
  private:
+  void Init(double p[]);
+
   /**
    * PID Errors
    */
